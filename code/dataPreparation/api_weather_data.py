@@ -1,4 +1,5 @@
-'''we already have completed the scraping puzzle piece, but we wanted this extra data'''
+'''we already have completed the scraping puzzle piece, but we wanted this extra data
+the data is already cleaned, hence it is straight saved in /cleaned folder'''
 
 import os
 import pandas as pd
@@ -47,9 +48,9 @@ rain_occurrences_df = pd.DataFrame(rain_occurrences, columns=['Start Time', 'End
 rain_occurrences_df = rain_occurrences_df.sort_values(by='Start Time')
 
 # Save data
-os.makedirs('data', exist_ok=True)
-rain_occurrences_df.to_csv('data/weather_data_2024.csv', index=False)
+os.makedirs('data/cleaned', exist_ok=True)
+rain_occurrences_df.to_csv('data/cleaned/weather_data_2024.csv', index=False)
 
 #Commented out after the first run
-print("Rain occurrences with locations saved to 'data/weather_data_2024.csv':")
-print(rain_occurrences_df)
+# print("Rain occurrences with locations saved to 'data/weather_data_2024.csv':")
+# print(rain_occurrences_df)
